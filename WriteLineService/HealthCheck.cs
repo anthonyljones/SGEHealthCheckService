@@ -80,7 +80,7 @@ namespace SGEHealthCheckService
         }
         public void OnTimer(object sender, System.Timers.ElapsedEventArgs args)
         {
-            String filename = "C:\\Temp\\servers.txt";
+            String filename = "C:\\Program Files\\SGE Health Check\\input\\servers.txt";
             String secondValue;
             String diskUsage;
             String memUsage;
@@ -123,7 +123,7 @@ namespace SGEHealthCheckService
                             string json = JsonConvert.SerializeObject(_serverStats.ToArray());
 
                             //write string to file
-                            string fileName = "C:\\Temp\\" + machineName + ".json";
+                            string fileName = "C:\\Program Files\\SGE Health Check\\output\\" + machineName + ".json";
                             System.IO.File.WriteAllText(fileName, json);
                         }
                         catch (Exception )
@@ -143,7 +143,7 @@ namespace SGEHealthCheckService
                             string json = JsonConvert.SerializeObject(_serverStats.ToArray());
 
                             //write string to file
-                            string fileName = "C:\\Temp\\" + machineName + ".json";
+                            string fileName = "C:\\Program Files\\SGE Health Check\\output\\" + machineName + ".json";
                             System.IO.File.WriteAllText(fileName, json);
                         }
                     });
